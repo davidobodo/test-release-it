@@ -10,7 +10,7 @@ jobs:
      uses: pnpm/action-setup@v2
      with:
       version: 9.1.3
-   - name: Install the dependencies
+   - name: Install the dependencies here
      run: pnpm i
    - name: End message
      run: echo "Job is done"
