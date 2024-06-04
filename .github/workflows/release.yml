@@ -7,6 +7,6 @@ jobs:
    - name: Checkout source code
      uses: actions/checkout@v2
    - name: Install the dependencies
-     run: npm ci
+     run: pnpm i
    - name: End message
      run: echo "Job is done"
