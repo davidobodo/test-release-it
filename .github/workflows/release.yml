@@ -1,5 +1,7 @@
 name: Release and publish to npm
-on: workflow_dispatch
+on:
+ workflow_dispatch:
+ workflow_call:
 jobs:
  release:
   runs-on: ubuntu-20.04
