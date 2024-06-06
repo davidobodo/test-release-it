@@ -1,11 +1,10 @@
 name: Deployment
 
 on:
-  release:
-    types: [published]
-
+ release:
+  types: [published]
 
 jobs:
-  publish_package:
-    - name: 'Publish package'
-      uses: ./.github/workflows/release.yml
+ publish_package:
+  - name: Publish package
+    uses: ./.github/workflows/release.yml
