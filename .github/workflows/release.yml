@@ -20,10 +20,16 @@ jobs:
      run: pnpm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
      env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-   - name: Run release
-     run: pnpm run release --ci
-     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+   - name: Publish
+     uses: JS-DevTools/npm-publish@v3
+     with: 
+      token: ${{ secrets.NPM_TOKEN }}
+      # token: ${{ secrets.GITHUB_TOKEN }}
+      # registry: "https://npm.pkg.github.com"
+  #  - name: Run release
+  #    run: pnpm run release --ci
+  #    env:
+  #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
    - name: End message
      run: echo "Job is done"
